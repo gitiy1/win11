@@ -1,12 +1,5 @@
-version: '2.1'
-orbs:
-  win: circleci/windows@2.4
+version: 2.1
 jobs:
   build:
-    executor: win/gpu-nvidia
-    steps:
-      - run: '&"C:\Program Files\NVIDIA Corporation\NVSMI\nvidia-smi.exe"'
-workflows:
-  my-workflow:
-    jobs:
-      - build
+    machine:
+      image: ubuntu-1604:202007-01
